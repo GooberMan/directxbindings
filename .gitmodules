@@ -1,0 +1,3 @@
+[submodule "combindings"]
+	path = combindings
+	url = https://github.com/GooberMan/combindings.git
