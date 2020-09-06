@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug LDC|x64">
+      <Configuration>Debug LDC</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release LDC|x64">
+      <Configuration>Release LDC</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <DCompile Include="..\..\combindings\src\d\combindings\attributes.d" />
+    <DCompile Include="..\..\combindings\src\d\combindings\glue.d" />
+    <DCompile Include="..\..\combindings\src\d\combindings\package.d" />
+    <DCompile Include="..\..\combindings\src\d\combindings\util.d" />
+    <DCompile Include="..\..\src\$(TargetPlatformVersion)\d\directx\d3d12.d" />
+    <DCompile Include="..\..\src\$(TargetPlatformVersion)\d\directx\d3d12sdklayers.d" />
+    <DCompile Include="..\..\src\$(TargetPlatformVersion)\d\directx\d3d12shader.d" />
+    <DCompile Include="..\..\src\$(TargetPlatformVersion)\d\directx\d3d12video.d" />
+    <DCompile Include="..\..\src\$(TargetPlatformVersion)\d\directx\d3dcommon.d" />
+    <DCompile Include="..\..\src\$(TargetPlatformVersion)\d\directx\dxgi.d" />
+    <DCompile Include="..\..\src\$(TargetPlatformVersion)\d\directx\dxgi1_2.d" />
+    <DCompile Include="..\..\src\$(TargetPlatformVersion)\d\directx\dxgicommon.d" />
+    <DCompile Include="..\..\src\$(TargetPlatformVersion)\d\directx\dxgiformat.d" />
+    <DCompile Include="..\..\src\$(TargetPlatformVersion)\d\directx\dxgitype.d" />
+    <DCompile Include="..\..\src\$(TargetPlatformVersion)\d\directx\dxgi1_3.d" />
+    <DCompile Include="..\..\src\$(TargetPlatformVersion)\d\directx\dxgi1_4.d" />
+    <DCompile Include="..\..\src\$(TargetPlatformVersion)\d\directx\dxgi1_5.d" />
+    <DCompile Include="..\..\src\$(TargetPlatformVersion)\d\directx\dxgi1_6.d" />
+    <DCompile Include="..\..\src\$(TargetPlatformVersion)\d\directx\libs.d" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{0DDAAB00-4D05-4FCF-8EE9-8FE4C5647619}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>DirectXBindings</RootNamespace>
+    <!-- guess the installed Windows SDK -->
+    <WindowsSdkInstallFolder_10 Condition="'$(WindowsSdkInstallFolder_10)' == ''">$(Registry:HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft SDKs\Windows\v10.0@InstallationFolder)</WindowsSdkInstallFolder_10>
+    <WindowsSdkInstallFolder_10 Condition="'$(WindowsSdkInstallFolder_10)' == ''">$(Registry:HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Microsoft SDKs\Windows\v10.0@InstallationFolder)</WindowsSdkInstallFolder_10>
+    <WindowsTargetPlatformVersion_10 Condition="'$(WindowsTargetPlatformVersion_10)' == ''">$(Registry:HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft SDKs\Windows\v10.0@ProductVersion)</WindowsTargetPlatformVersion_10>
+    <WindowsTargetPlatformVersion_10 Condition="'$(WindowsTargetPlatformVersion_10)' == ''">$(Registry:HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Microsoft SDKs\Windows\v10.0@ProductVersion)</WindowsTargetPlatformVersion_10>
+    <!-- Sometimes the version in the registry has to .0 suffix, and sometimes it doesn't. Check and add it -->
+    <WindowsTargetPlatformVersion_10 Condition="'$(WindowsTargetPlatformVersion_10)' != '' and !$(WindowsTargetPlatformVersion_10.EndsWith('.0'))">$(WindowsTargetPlatformVersion_10).0</WindowsTargetPlatformVersion_10>
+    <WindowsTargetPlatformVersion Condition="'$(WindowsTargetPlatformVersion_10)' != ''">10.0.17134.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>$(DefaultPlatformToolset)</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <DCompiler>DMD</DCompiler>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>$(DefaultPlatformToolset)</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <DCompiler>DMD</DCompiler>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug LDC|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>$(DefaultPlatformToolset)</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <DCompiler>LDC</DCompiler>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release LDC|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>$(DefaultPlatformToolset)</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <DCompiler>LDC</DCompiler>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug LDC|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release LDC|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)..\..\lib\$(TargetPlatformVersion)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)..\..\obj\$(TargetPlatformVersion)\$(Platform)\$(Configuration)\</IntDir>
+    <TargetName>libdirectxbindings</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)..\..\lib\$(TargetPlatformVersion)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)..\..\obj\$(TargetPlatformVersion)\$(Platform)\$(Configuration)\</IntDir>
+    <TargetName>libdirectxbindings</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug LDC|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)..\..\lib\$(TargetPlatformVersion)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)..\..\obj\$(TargetPlatformVersion)\$(Platform)\$(Configuration)\</IntDir>
+    <TargetName>libdirectxbindings</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release LDC|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)..\..\lib\$(TargetPlatformVersion)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)..\..\obj\$(TargetPlatformVersion)\$(Platform)\$(Configuration)\</IntDir>
+    <TargetName>libdirectxbindings</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+    <DCompile>
+      <CRuntimeLibrary>MultiThreadedDebug</CRuntimeLibrary>
+      <ImportPaths>$(SolutionDir)..\..\src\$(TargetPlatformVersion)\d;$(SolutionDir)..\..\combindings\src\d</ImportPaths>
+    </DCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <DCompile>
+      <DebugCode>Release</DebugCode>
+      <Optimizer>true</Optimizer>
+      <Inliner>true</Inliner>
+      <ImportPaths>$(SolutionDir)..\..\src\$(TargetPlatformVersion)\d;$(SolutionDir)..\..\combindings\src\d</ImportPaths>
+    </DCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug LDC|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+    <DCompile>
+      <CRuntimeLibrary>MultiThreadedDebug</CRuntimeLibrary>
+      <ImportPaths>$(SolutionDir)..\..\src\$(TargetPlatformVersion)\d;$(SolutionDir)..\..\combindings\src\d</ImportPaths>
+    </DCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release LDC|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <DCompile>
+      <DebugCode>Release</DebugCode>
+      <Optimizer>true</Optimizer>
+      <Inliner>true</Inliner>
+      <ImportPaths>$(SolutionDir)..\..\src\$(TargetPlatformVersion)\d;$(SolutionDir)..\..\combindings\src\d</ImportPaths>
+    </DCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

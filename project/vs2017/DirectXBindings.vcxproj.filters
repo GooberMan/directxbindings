@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="directx">
+      <UniqueIdentifier>{8a1b1fde-a8da-470f-986e-4e30fa5e8448}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="combindings">
+      <UniqueIdentifier>{72e7f717-b694-4553-960b-6c1879a77284}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <DCompile Include="..\..\src\$(TargetPlatformVersion)\d\directx\d3d12.d">
+      <Filter>directx</Filter>
+    </DCompile>
+    <DCompile Include="..\..\src\$(TargetPlatformVersion)\d\directx\d3d12sdklayers.d">
+      <Filter>directx</Filter>
+    </DCompile>
+    <DCompile Include="..\..\src\$(TargetPlatformVersion)\d\directx\d3d12shader.d">
+      <Filter>directx</Filter>
+    </DCompile>
+    <DCompile Include="..\..\src\$(TargetPlatformVersion)\d\directx\d3d12video.d">
+      <Filter>directx</Filter>
+    </DCompile>
+    <DCompile Include="..\..\src\$(TargetPlatformVersion)\d\directx\d3dcommon.d">
+      <Filter>directx</Filter>
+    </DCompile>
+    <DCompile Include="..\..\src\$(TargetPlatformVersion)\d\directx\dxgi.d">
+      <Filter>directx</Filter>
+    </DCompile>
+    <DCompile Include="..\..\src\$(TargetPlatformVersion)\d\directx\dxgi1_2.d">
+      <Filter>directx</Filter>
+    </DCompile>
+    <DCompile Include="..\..\src\$(TargetPlatformVersion)\d\directx\dxgicommon.d">
+      <Filter>directx</Filter>
+    </DCompile>
+    <DCompile Include="..\..\src\$(TargetPlatformVersion)\d\directx\dxgiformat.d">
+      <Filter>directx</Filter>
+    </DCompile>
+    <DCompile Include="..\..\src\$(TargetPlatformVersion)\d\directx\dxgitype.d">
+      <Filter>directx</Filter>
+    </DCompile>
+    <DCompile Include="..\..\src\$(TargetPlatformVersion)\d\directx\dxgi1_3.d">
+      <Filter>directx</Filter>
+    </DCompile>
+    <DCompile Include="..\..\src\$(TargetPlatformVersion)\d\directx\dxgi1_4.d">
+      <Filter>directx</Filter>
+    </DCompile>
+    <DCompile Include="..\..\src\$(TargetPlatformVersion)\d\directx\dxgi1_5.d">
+      <Filter>directx</Filter>
+    </DCompile>
+    <DCompile Include="..\..\src\$(TargetPlatformVersion)\d\directx\dxgi1_6.d">
+      <Filter>directx</Filter>
+    </DCompile>
+    <DCompile Include="..\..\src\$(TargetPlatformVersion)\d\directx\libs.d">
+      <Filter>directx</Filter>
+    </DCompile>
+    <DCompile Include="..\..\combindings\src\d\combindings\attributes.d">
+      <Filter>combindings</Filter>
+    </DCompile>
+    <DCompile Include="..\..\combindings\src\d\combindings\glue.d">
+      <Filter>combindings</Filter>
+    </DCompile>
+    <DCompile Include="..\..\combindings\src\d\combindings\package.d">
+      <Filter>combindings</Filter>
+    </DCompile>
+    <DCompile Include="..\..\combindings\src\d\combindings\util.d">
+      <Filter>combindings</Filter>
+    </DCompile>
+  </ItemGroup>
+</Project>
