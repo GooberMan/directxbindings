@@ -103,26 +103,26 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(SolutionDir)..\..\lib\$(TargetPlatformVersion)\$(Platform)\$(Configuration)\</OutDir>
-    <IntDir>$(SolutionDir)..\..\obj\$(TargetPlatformVersion)\$(Platform)\$(Configuration)\</IntDir>
+    <OutDir>$(ProjectDir)..\..\lib\$(TargetPlatformVersion)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)..\..\obj\$(TargetPlatformVersion)\$(Platform)\$(Configuration)\</IntDir>
     <TargetName>libdirectxbindings</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)..\..\lib\$(TargetPlatformVersion)\$(Platform)\$(Configuration)\</OutDir>
-    <IntDir>$(SolutionDir)..\..\obj\$(TargetPlatformVersion)\$(Platform)\$(Configuration)\</IntDir>
+    <OutDir>$(ProjectDir)..\..\lib\$(TargetPlatformVersion)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)..\..\obj\$(TargetPlatformVersion)\$(Platform)\$(Configuration)\</IntDir>
     <TargetName>libdirectxbindings</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug LDC|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(SolutionDir)..\..\lib\$(TargetPlatformVersion)\$(Platform)\$(Configuration)\</OutDir>
-    <IntDir>$(SolutionDir)..\..\obj\$(TargetPlatformVersion)\$(Platform)\$(Configuration)\</IntDir>
+    <OutDir>$(ProjectDir)..\..\lib\$(TargetPlatformVersion)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)..\..\obj\$(TargetPlatformVersion)\$(Platform)\$(Configuration)\</IntDir>
     <TargetName>libdirectxbindings</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release LDC|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)..\..\lib\$(TargetPlatformVersion)\$(Platform)\$(Configuration)\</OutDir>
-    <IntDir>$(SolutionDir)..\..\obj\$(TargetPlatformVersion)\$(Platform)\$(Configuration)\</IntDir>
+    <OutDir>$(ProjectDir)..\..\lib\$(TargetPlatformVersion)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)..\..\obj\$(TargetPlatformVersion)\$(Platform)\$(Configuration)\</IntDir>
     <TargetName>libdirectxbindings</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -136,7 +136,7 @@
     </ClCompile>
     <DCompile>
       <CRuntimeLibrary>MultiThreadedDebug</CRuntimeLibrary>
-      <ImportPaths>$(SolutionDir)..\..\src\$(TargetPlatformVersion)\d;$(SolutionDir)..\..\combindings\src\d</ImportPaths>
+      <ImportPaths>$(ProjectDir)..\..\src\$(TargetPlatformVersion)\d;$(ProjectDir)..\..\combindings\src\d</ImportPaths>
     </DCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -158,7 +158,7 @@
       <DebugCode>Release</DebugCode>
       <Optimizer>true</Optimizer>
       <Inliner>true</Inliner>
-      <ImportPaths>$(SolutionDir)..\..\src\$(TargetPlatformVersion)\d;$(SolutionDir)..\..\combindings\src\d</ImportPaths>
+      <ImportPaths>$(ProjectDir)..\..\src\$(TargetPlatformVersion)\d;$(ProjectDir)..\..\combindings\src\d</ImportPaths>
     </DCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -178,7 +178,7 @@
     </ClCompile>
     <DCompile>
       <CRuntimeLibrary>MultiThreadedDebug</CRuntimeLibrary>
-      <ImportPaths>$(SolutionDir)..\..\src\$(TargetPlatformVersion)\d;$(SolutionDir)..\..\combindings\src\d</ImportPaths>
+      <ImportPaths>$(ProjectDir)..\..\src\$(TargetPlatformVersion)\d;$(ProjectDir)..\..\combindings\src\d</ImportPaths>
     </DCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -200,7 +200,7 @@
       <DebugCode>Release</DebugCode>
       <Optimizer>true</Optimizer>
       <Inliner>true</Inliner>
-      <ImportPaths>$(SolutionDir)..\..\src\$(TargetPlatformVersion)\d;$(SolutionDir)..\..\combindings\src\d</ImportPaths>
+      <ImportPaths>$(ProjectDir)..\..\src\$(TargetPlatformVersion)\d;$(ProjectDir)..\..\combindings\src\d</ImportPaths>
     </DCompile>
     <Link>
       <SubSystem>Console</SubSystem>
